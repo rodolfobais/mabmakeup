@@ -1,4 +1,4 @@
 <?php
-// Powered by Zyro
+// Powered by Zyroasd
 include dirname(__FILE__).'/zyro/index.php';
 ?>
