@@ -141,17 +141,17 @@ function load_module()
 	if ( isset($_SESSION['User_NA']) ) {	
 		$myIndex = 'index.php' ;
 		$genericIndex = 'generic_index.php' ;
-		$myModule = 'fakeDir/index.php';
-		
+		$myModule = 'modules/'.$_GET['menu'].'/index.php';
+// 		echo "<pre>"; print_r($arrConf);echo "</pre>";
 // 		$arrConf['modulePath'] = $arrConf['modulePath'].$arrConf['moduleName'].'/';
 		
 // 		echo "genericIndex:".$genericIndex.file_exists($myModule)."<br/>";
-// 		echo "myModule:".$myModule."<br/>";
+//  		echo "myModule:".$myModule."<br/>";
 // 		echo "myIndex:".$myIndex."<br/>";
 		include_once($myIndex);
 		if( @file_exists($myModule) ) {
 			$arrConf['myModule'] = $myModule;
-			include_once($myIndex);  //el index.php base del theme
+			include_once($myModule);  //el index.php base del theme
 // 			echo "TRUE<br/>";
 		}else{
 			$arrConf['myModule'] = $genericIndex;

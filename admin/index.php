@@ -66,6 +66,8 @@ if (isset( $arrConf['moduleName'])){
 if (!array_key_exists('myModule', $arrConf)) {
 // 	echo "pepe argento";
 	$arrConf['myModule'] = "generic_index.php";
+}else{
+	
 }
 // echo "<pre>"; print_r(getdate());echo "</pre>";
 // echo "<pre>"; print_r($arrLangModule);echo "</pre>";
