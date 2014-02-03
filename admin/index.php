@@ -59,29 +59,6 @@ if (isset( $arrConf['moduleName'])){
 }else{ 
 	echo '<h3> hops.. invalid menu</h3> click <a href="?logout=yes&reason=falied">here</a> to reload ';
 }
-?>
-<td valign="top">
-<?php
-//array_key_exists('myModule', $arrConf)
-if (!array_key_exists('myModule', $arrConf)) {
-// 	echo "pepe argento";
-	$arrConf['myModule'] = "generic_index.php";
-}else{
-	
-}
-// echo "<pre>"; print_r(getdate());echo "</pre>";
-// echo "<pre>"; print_r($arrLangModule);echo "</pre>";
-require( $arrConf['myModule'] );
-?>
-</td>
-</tr>
-</table>
-
-<div id="contenido" ></div>
-
-</body>
-</html>
-<?php
  
 ini_set('session.gc_maxlifetime', 4*60*60); // 3 hours
 //mis includes
@@ -100,3 +77,26 @@ getGroupId ();
 //cargar modulo y menus
 load_module();
 ?>
+
+<td valign="top">
+<?php
+//array_key_exists('myModule', $arrConf)
+// echo "<pre>"; print_r($arrConf);echo "</pre>";
+if (!array_key_exists('myModule', $arrConf)) {
+// 	echo "pepe argento";
+	$arrConf['myModule'] = "generic_index.php";
+}else{
+	
+}
+//  echo "<pre>"; print_r($arrConf['myModule']);echo "</pre>";
+ 
+require( $arrConf['myModule'] );
+?>
+</td>
+</tr>
+</table>
+
+<div id="contenido" ></div>
+
+</body>
+</html>

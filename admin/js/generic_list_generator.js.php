@@ -162,6 +162,9 @@ $(document).ready(function() {
 	if(permission_delete !='yes'){ 
 		$('.flexigrid div.fbutton .delete').hide();	 
 	} 
+	if(permission_copy !='yes'){ 
+		$('.flexigrid div.fbutton .copy').hide(); 
+	} 
 	
 	function dobleClick(grid){
 		var item = $('.trSelected td:first-child div').text();

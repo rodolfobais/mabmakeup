@@ -35,14 +35,15 @@ class funciones{
 		}
 		return $salida;
 	}
-	function getMisTrabajos(){
-		// 		$sql = "SELECT `valor` FROM mistrabajos where id = '".$idParam."'";
+	function getMisTrabajos($cant){
+		$sql = "SELECT `fecha`, `imagen`, `comentario` FROM mistrabajos order by id desc LIMIT 0 , ".$cant."";
 		// 		// 	  	 echo $sql;
-		// 		$result = $this -> db -> QueryFetchArray($sql);
+		$comentarios = $this -> db -> QueryFetchArray($sql);
 		// 		// 		echo "<pre>"; print_r($sql);echo "</pre>";
 		// 		// 		file_put_contents("zzz_sql.sql", $sql);
 		// 		return $result[0]['valor'];
 		// 		// 		return $sql;
+		/*
 		$comentarios = array();
 		$pos = 0;
 		$comentarios[$pos]['fecha'] = '2013 01 20';
@@ -56,7 +57,7 @@ class funciones{
 		$comentarios[$pos]['fecha'] = '2013 01 17';
 		$comentarios[$pos]['imagen'] = '0ccb6ff15783bcbd122c0184e1fe0eab_120x117.jpg';
 		$comentarios[$pos]['contenido'] = 'Claritas est etiam processus dynamicus, qui sequitur mutationem. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros. Claritas est etiam processus dynamicus, qui sequitur mutationem.';
-		
+		*/
 	
 		$salida = '';
 		$salida.= '
@@ -69,7 +70,7 @@ class funciones{
 					</td>
 					<td style = "width: 75%; vertical-align:text-top;">
 						<p class="wb-stl-normal">'.$comentarios[$i]['fecha'].'</p>
-						<p class="wb-stl-normal"><a href="misTrabajos.php">'.$comentarios[$i]['contenido'].'</a></p>
+						<p class="wb-stl-normal"><a href="misTrabajos.php">'.$comentarios[$i]['comentario'].'</a></p>
 						<p class="wb-stl-normal" style = "border-bottom: 1px solid #7afb3a;"> </p>
 					</td>
 				</tr>

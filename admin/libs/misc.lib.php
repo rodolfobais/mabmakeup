@@ -151,7 +151,7 @@ function load_module()
 		include_once($myIndex);
 		if( @file_exists($myModule) ) {
 			$arrConf['myModule'] = $myModule;
-			include_once($myModule);  //el index.php base del theme
+// 			include_once($myModule);  //el index.php base del theme
 // 			echo "TRUE<br/>";
 		}else{
 			$arrConf['myModule'] = $genericIndex;

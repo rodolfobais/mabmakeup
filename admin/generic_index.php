@@ -27,6 +27,7 @@ global $langMenu;
 	var permission_add 		= 'yes';
 	var permission_edit 	= 'yes';
 	var permission_delete 	= 'yes';
+	var permission_copy 	= 'yes';
 </script>
 
 <div id="modalbox" href="#data"></div>
