@@ -10,7 +10,11 @@ class dataBase{
 		$this -> dir = $param;
 	} 
 	function dbConnect(){
-		require($this->dir.'configs/default.conf.php');
+// 		echo "<pre>"; print_r($_SERVER);echo "</pre>";
+// 		echo "<br/>server: ".$_SERVER['DOCUMENT_ROOT']."<br/>";
+// 		echo "<br/>path: ".$_SERVER['DOCUMENT_ROOT'].'/admin/configs/default.conf.php<br/>';
+// 		echo "<br/>path: ".$_SESSION['rootSite'].'configs/default.conf.php';
+		require($_SESSION['rootSite'].'configs/default.conf.php');
 		
 	    $dbConn = mysql_pconnect( $arrConf['hostDB_NA'], $arrConf['userDB_NA'], $arrConf['passwordDB_NA'] );
 	    if (!$dbConn) {

@@ -1,8 +1,9 @@
 <?php
 
 function parse_uri() {
-	global $home_page, $pages, $base_url, $show_comments;
-	
+	global $home_page, $base_url, $show_comments;
+// 	echo "<pre>"; print_r($_SESSION);echo "</pre>";
+	$pages = $_SESSION['pages'];
 	$nh = preg_replace('#^http[s]*://[^/]+/#i', '/', $base_url);
 	$nh = preg_replace('#/[^/]+/\.\./#i', '/', $nh);
 	$ru = trim(isset($_SERVER['REQUEST_URI']) ? urldecode($_SERVER['REQUEST_URI']) : '/');

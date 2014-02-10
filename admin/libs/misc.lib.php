@@ -721,8 +721,8 @@ function showMenu($idMenuSelected)
 	}
 ?>
 
-	<td class="menuaftertab" align="right" width="40%"><a href=""><?php echo $_SESSION['_VERSION']; ?></a></td>
-	<td class="menuaftertab" align="right" width="20%"><div class="logout_button" ><?php echo $_SESSION['User_NA'].' Logout'; ?></div></td>
+	<td class="menuaftertab" align="right" width="40%">Version <?php echo $_SESSION['_VERSION']; ?></td>
+	<td class="menuaftertab" align="right" width="20%"><a href = "logout.php"><div class="logout_button" ><?php echo $_SESSION['User_NA'].' Logout'; ?></div></a></td>
 	</tr>
 	<tr>
 	</table>

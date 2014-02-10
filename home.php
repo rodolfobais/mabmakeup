@@ -1,12 +1,15 @@
 <?php 
+require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/admin/configs/default.conf.php';
 require 'libs/funciones.class.php';
 $fn = new funciones('admin/');
 $TituloHome = $fn->getParametro('TituloHome');
 $_SESSION['page'] = 'home.php';
 // die;
-$comentarios = $fn->getComentarios();
+$comentarios = $fn->getComentarios(5);
 $misTrabajos = $fn->getMisTrabajos(3);
+// echo "<pre>"; print_r($_SESSION);echo "</pre>";
 
+$imagenPpal = "portada_home.jpg";
 
 ?>
 
@@ -15,7 +18,7 @@ $misTrabajos = $fn->getMisTrabajos(3);
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Home</title>
-	<base href="http://mablancomakeup.com.ar/" />
+	<base href="<?php echo $_SESSION['_BasePath'];?>" />
 	<meta name="viewport" content="width=1005" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -88,9 +91,8 @@ $misTrabajos = $fn->getMisTrabajos(3);
 </head>
 	<body>
 		<div class="root" style="width: 1007px;">
-			<div class="vbox wb_container" id="wb_header" style='height: 652px; background: transparent url("gallery/0a1f813cfe8ce5edfdd57e4f518a62fb.jpg") no-repeat scroll center bottom;'>
+			<div class="vbox wb_container" id="wb_header" style='height: 652px; background: transparent url("gallery/<?php echo $imagenPpal;?>") no-repeat scroll center bottom;'>
 				<div id="wb_element_instance0" class="wb_element" style="left: 20px; top: 90px; width: 961px; height: 46px; min-width: 961px; min-height: 46px; z-index: 267;">
-					
 					<?php require 'menuPpal.php';?>
 				</div>
 				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
@@ -105,8 +107,18 @@ $misTrabajos = $fn->getMisTrabajos(3);
 				</div>
 				-->
 				<div id="wb_element_instance3" class="wb_element" style="left: 723px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 70;">
-					<input type = "text" placeholder = "Usuario">
-					<input type = "password" placeholder = "Password">
+					 <?php 
+						 if (!array_key_exists('user', $_SESSION)) {
+						 	echo '	
+								<form action="validaLogin.php" method="post" id="loginForm" name="loginForm" style="width:300px;height:40px;">
+									<input name = "user"   type="text" style="width:150px;height:10px;" placeholder="Usuario">
+									<input name = "submit" type="submit" value="Entrar">
+									<input name = "psw"    type="password" style="width:150px;" placeholder="Password">
+								</form>';
+						 }else{
+						 	echo 'Bienvenida '.$_SESSION['user'].'(<a href="logout.php" target="_self" title="Salir">Salir</a>)';
+						 }
+					?>
 				</div>
 				<div id="wb_element_instance18" class="wb_element" style="left: 23px; top: 169px; width: 923px; height: 68px; min-width: 923px; min-height: 68px; z-index: 44;  line-height: normal;">
 					<h5 class="wb-stl-subtitle"><? echo $TituloHome;?></h5>

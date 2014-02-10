@@ -1,11 +1,12 @@
 <?php
-session_start();
+// session_start();
 class funciones{
 	private $dir = '';
 	private $db = '';
 	function __construct($param){
 		$this -> dir = $param;
-		require_once $this -> dir.'classes/dataBase.class.php';
+// 		echo "<br/>path: ".$_SERVER['DOCUMENT_ROOT'].'/admin/configs/default.conf.php<br/>';
+		require_once $_SESSION['rootSite'].'classes/dataBase.class.php';
 		$this -> db = new dataBase($this -> dir);
 	}
 	function getParametro($idParam){
@@ -17,8 +18,8 @@ class funciones{
 		return $result[0]['valor'];
 // 		return $sql;
 	}
-	function getComentarios(){
-		$sql = "SELECT `date` as fecha, `comentario` as contenido FROM comentarios order by date desc LIMIT 0 , 5";
+	function getComentarios($cant){
+		$sql = "SELECT `date` as fecha, `comentario` as contenido FROM comentarios order by date desc LIMIT 0 , ".$cant."";
 // 		// 	  	 echo $sql;
 		$comentarios = $this -> db -> QueryFetchArray($sql);
 // 		// 		echo "<pre>"; print_r($sql);echo "</pre>";
