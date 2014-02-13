@@ -4,22 +4,22 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/admin/configs/default.conf.ph
 // require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/index.php';
 require 'libs/funciones.class.php';
 $fn = new funciones('admin/');
-$subtitulocontacto = $fn->getParametro('subtitulocontacto');
-$_SESSION['page'] = 'contacto.php';
+// $TituloHome = $fn->getParametro('TituloHome');
+$_SESSION['page'] = 'misTrabajos.php';
 // die;
-$comentarios = $fn->getComentarios(500);
-// $misTrabajos = $fn->getMisTrabajos(3);
+// $comentarios = $fn->getComentarios(500);
+$misTrabajos = $fn->getMisTrabajos(500);
 // echo "<pre>"; print_r($_SESSION);echo "</pre>";
 
-$imagenPpal = "portada_contacto.jpg";
+$imagenPpal = "portada_mistrabajos.jpg";
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
+	<head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Contacto</title>
+	<title>Mis trabajos</title>
 	<base href="<?php echo $_SESSION['_BasePath'];?>" />
 	<meta name="viewport" content="width=1005" />
 	<meta name="description" content="" />
@@ -294,21 +294,21 @@ $imagenPpal = "portada_contacto.jpg";
 		min-width: 1007px;
 	}
 	
-	#wb_element_instance49 ul {
+	#wb_element_instance27 ul {
 		background: #79ff3b none no-repeat scroll left top;
 		border: 1px none #000000;
 		text-align: left;
 	}
 	
-	#wb_element_instance49 ul ul {
+	#wb_element_instance27 ul ul {
 		background: transparent none no-repeat scroll left top;
 	}
 	
-	#wb_element_instance49 li {
+	#wb_element_instance27 li {
 		margin: 0px 20px 0px 20px;
 	}
 	
-	#wb_element_instance49 li a {
+	#wb_element_instance27 li a {
 		text-transform: uppercase;
 		border: 0px none #000000;
 		padding: 15px 20px 15px 20px;
@@ -320,7 +320,7 @@ $imagenPpal = "portada_contacto.jpg";
 		background: transparent none repeat scroll left top;
 	}
 	
-	#wb_element_instance49 li a:hover {
+	#wb_element_instance27 li a:hover {
 		border: 0px none #000000;
 		font: normal bold 14px Arial, Helvetica, sans-serif;
 		text-align: left;
@@ -330,7 +330,7 @@ $imagenPpal = "portada_contacto.jpg";
 		background: #ffffff none repeat-x scroll left top;
 	}
 	
-	#wb_element_instance49 li.active>a {
+	#wb_element_instance27 li.active>a {
 		border: 0px none #000000;
 		font: normal bold 14px Arial, Helvetica, sans-serif;
 		text-align: left;
@@ -338,10 +338,6 @@ $imagenPpal = "portada_contacto.jpg";
 		color: #050505;
 		line-height: 16px;
 		background: #ffffff none repeat scroll left top;
-	}
-	
-	#wb_element_instance57 form td {
-		text-align: right;
 	}
 	</style>
 	<link href="css/site.css?v=1.0.3" rel="stylesheet" type="text/css" />
@@ -352,7 +348,7 @@ $imagenPpal = "portada_contacto.jpg";
 		<![endif]-->
 	<script type="text/javascript">
 		$(function() {
-			$("#wb_element_instance49").children("ul").children().each(function() {
+			$("#wb_element_instance27").children("ul").children().each(function() {
 				if ($(this).children("ul").size() == 0) return;
 				$(this).hover(function() {
 					$(this).children("ul").css({display: "block"});
@@ -361,30 +357,21 @@ $imagenPpal = "portada_contacto.jpg";
 				});
 			});
 		});
-		function validafrm(){
-			if($("#nombre").val() != "" && $("#mail").val() != ""){
-				document.frmcontacto.submit();
-			}else{
-				alert("Debe completar los campos nombre y mail");
-			}
-		}
 	</script>
-</head>
-
-
-<body>
-	<div class="root" style="width: 1007px; height: 900px;">
-		<div class="vbox wb_container" id="wb_header" style='height: 360px; background: transparent url("gallery/<?php echo $imagenPpal;?>") no-repeat scroll center bottom;'>
-			<div id="wb_element_instance49" class="wb_element" style="left: 20px; top: 90px; width: 961px; height: 46px; min-width: 961px; min-height: 46px; z-index: 267;">
-				<?php require 'menuPpal.php';?>
-			</div>
-			<div id="wb_element_instance50" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63; line-height: normal;">
-				<h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4>
-			</div>
-			<div id="wb_element_instance51" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
-				<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>
-			</div>
-			<div id="wb_element_instance3" class="wb_element" style="left: 723px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 70;">
+	</head>
+	<body>
+		<div class="root" style="width: 1007px; height: 1313px;">
+			<div class="vbox wb_container" id="wb_header" style='height: 360px; background: transparent url("gallery/<?php echo $imagenPpal;?>") no-repeat scroll center bottom;'>
+				<div id="wb_element_instance27" class="wb_element" style="left: 20px; top: 90px; width: 961px; height: 46px; min-width: 961px; min-height: 46px; z-index: 267;">
+					<?php require 'menuPpal.php';?>
+				</div>
+				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
+					<h4 class="wb-stl-pagetitle">MariaAngeles Blanco Make Up</h4>
+				</div>
+				<div id="wb_element_instance29" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
+					<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>
+				</div>
+				<div id="wb_element_instance3" class="wb_element" style="left: 723px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 70;">
 					 <?php 
 						 if (!array_key_exists('user', $_SESSION)) {
 						 	echo '	
@@ -398,52 +385,18 @@ $imagenPpal = "portada_contacto.jpg";
 						 }
 					?>
 				</div>
+			</div>
+			<div class="vbox wb_container" id="wb_main"	style="height: 833px; background: transparent none repeat scroll left top; padding: 0 0 50px 0; overflow:auto;">
+				<br/><span class="wb-stl-heading1">Mis trabajos</span>
+				<div id="wb_element_instance46" class="wb_element"	style="left: 200px; top: 45px; width: 730px; height: 8px; min-width: 791px; min-height: 8px; z-index: 37;">
+					<div style="font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none; position: relative; margin: 1px 0 0 0; width: 100%; height: 1px; left: 0; top: 50%; border-top: 3px solid #7afb3a;"></div>
+				</div>
+				<table border = 0 width = 985 >
+					<? echo $misTrabajos;?>
+				</table>
+			</div>
+			<?php require 'footer.php';?>
+			<!--<div class="wb_sbg" style="min-height: 1313px;"></div>-->
 		</div>
-		<div class="vbox wb_container" id="wb_main" style="height: 400px; background: transparent none repeat-x scroll left top; padding: 0 0 70px 0;">
-			<div id="wb_element_instance54" class="wb_element" style="left: 20px; top: 35px; width: 933px; height: 151px; min-width: 933px; min-height: 151px; z-index: 19; line-height: normal;">
-				<h1 class="wb-stl-heading1">Contacto</h1>
-				<p> </p>
-				<p class="wb-stl-normal">
-					<? echo $subtitulocontacto;?>
-				</p>
-			</div>
-			<div id="wb_element_instance56" class="wb_element" style="left: 175px; top: 59px; width: 806px; height: 8px; min-width: 806px; min-height: 8px; z-index: 35;">
-				<div style="font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none; position: relative; margin: 1px 0 0 0; width: 100%; height: 1px; left: 0; top: 50%; border-top: 3px solid #7afb3a;"></div>
-			</div>
-			<div id="wb_element_instance57" class="wb_element" style="left: 20px; top: 230px; width: 960px; height: 200px; min-width: 960px; min-height: 200px; z-index: 36;">
-				<form class="wb_form" method="post" name = "frmcontacto" id = "frmcontacto" action = "sendmail.php">
-					<input type="hidden" name="wb_form_id" value="7aee5648">
-					<textarea name="message" rows="3" cols="20" class="hpc"></textarea>
-					<table>
-						<tr>
-							<th class="wb-stl-normal">Nombre&nbsp;&nbsp;</th>
-							<td>
-								<input type="text" value="" style="width: 672px;" name="nombre" id="nombre">
-							</td>
-						</tr>
-						<tr>
-							<th class="wb-stl-normal">E-mail&nbsp;&nbsp;</th>
-							<td>
-								<input type="text" value="" style="width: 672px;" name="mail" id="mail">
-							</td>
-						</tr>
-						<tr>
-							<th class="wb-stl-normal" style="height: 1%;">Mensaje&nbsp;&nbsp;</th>
-							<td style="height: 1%;">
-								<textarea rows="3" cols="20" style="width: 672px; height: 70px;" name="mensaje" id="mensaje"></textarea>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" style="height: 20px;">
-								<button type="button" onclick="validafrm()" class="btn">Enviar</button>
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
-		</div>
-		<?php require 'footer.php';?>
-		<!-- <div class="wb_sbg" style="min-height: 1301px;"></div> -->
-	</div>
-</body>
+	</body>
 </html>

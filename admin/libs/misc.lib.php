@@ -412,9 +412,6 @@ function load_hmlt_headers()
 <!DOCTYPE html > 
 <html >
 <head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-
 
 <title><?php echo $_SESSION['_TITLE']; ?></title>
 <!-- <link rel="icon"  href="images/favicon.ico" />-->

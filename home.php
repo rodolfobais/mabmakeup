@@ -1,11 +1,12 @@
 <?php 
+@session_start();
 require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/admin/configs/default.conf.php';
 require 'libs/funciones.class.php';
 $fn = new funciones('admin/');
 $TituloHome = $fn->getParametro('TituloHome');
 $_SESSION['page'] = 'home.php';
 // die;
-$comentarios = $fn->getComentarios(5);
+$comentarios = $fn->getComentarios(3);
 $misTrabajos = $fn->getMisTrabajos(3);
 // echo "<pre>"; print_r($_SESSION);echo "</pre>";
 
@@ -96,7 +97,7 @@ $imagenPpal = "portada_home.jpg";
 					<?php require 'menuPpal.php';?>
 				</div>
 				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
-					<h4 class="wb-stl-pagetitle">MariaAngeles Blanco MakeUp</h4>
+					<h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4>
 				</div>
 				<div id="wb_element_instance2" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
 					<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>
@@ -137,7 +138,9 @@ $imagenPpal = "portada_home.jpg";
 				<div style="position:relative; left: 400px; top: 30px; width: 580px; height: 443px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal; border: 0px solid #7afb3a;">
 					<h2 class="wb-stl-heading2">Mis trabajos</h2>
 					<div style="position:relative; left: 180px; top: -10px; font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none;  margin: 1px 0 0 0; width: 400px; height: 1px; border-top: 3px solid #7afb3a;"></div>
-					<? echo $misTrabajos;?>					
+					<table border = 0 width = 580 >
+						<? echo $misTrabajos;?>
+					</table>					
 				</div>
 			</div>
 			<?php require 'footer.php';?>

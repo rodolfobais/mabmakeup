@@ -1,4 +1,5 @@
 <?php 
+@session_start();
 require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/admin/configs/default.conf.php';
 // require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/index.php';
 require 'libs/funciones.class.php';
@@ -365,7 +366,7 @@ $imagenPpal = "portada_comentarios.jpg";
 					<?php require 'menuPpal.php';?>
 				</div>
 				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
-					<h4 class="wb-stl-pagetitle">MariaAngeles Blanco MakeUp</h4>
+					<h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4>
 				</div>
 				<div id="wb_element_instance29" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
 					<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>
@@ -387,7 +388,7 @@ $imagenPpal = "portada_comentarios.jpg";
 			</div>
 			<div class="vbox wb_container" id="wb_main"	style="height: 833px; background: transparent none repeat scroll left top; padding: 0 0 50px 0; overflow:auto;">
 				<br/><span class="wb-stl-heading1">Comentarios</span>
-				<div id="wb_element_instance46" class="wb_element"	style="left: 150px; top: 45px; width: 851px; height: 8px; min-width: 791px; min-height: 8px; z-index: 37;">
+				<div id="wb_element_instance46" class="wb_element"	style="left: 210px; top: 45px; width: 791px; height: 8px; min-width: 791px; min-height: 8px; z-index: 37;">
 					<div style="font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none; position: relative; margin: 1px 0 0 0; width: 100%; height: 1px; left: 0; top: 50%; border-top: 3px solid #7afb3a;"></div>
 				</div>
 				<? echo $comentarios;?>

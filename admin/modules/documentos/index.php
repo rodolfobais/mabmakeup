@@ -2,6 +2,17 @@
 global $arrLang;
 global $arrMenu;
 global $langMenu;
+
+require_once 'classes/dataBase.class.php';
+$db = new dataBase('');
+
+require_once 'classes/html.class.php';
+$ht = new html('');
+
+$sql = "SELECT `id` as id,CONCAT(`id`, ' - ' , `descrp`) as valor FROM `cursos`";
+$aoptions = $db -> QueryFetchArray($sql);
+$curso = $ht->select($name = "curso", $aoptions);
+
 ?>
 <script type="text/javascript"> 
 	var modulo				= '<?php echo $_SESSION['menu'];?>'
@@ -17,19 +28,19 @@ global $langMenu;
 	var select_item 		= '<?php echo $arrLang['SelectAnItem'];?>';
 	var addnew 				= 'addnew';	
 	var permission_add 		= 'no';
-	var permission_edit 	= 'no';
+	var permission_edit 	= 'yes';
 	var permission_delete 	= 'yes';
 	var permission_copy 	= 'no';
 </script>
-<form name="uploadForm" id="uploadForm" method="post" action="modules/cargarmistrabajos/upload.php" enctype="multipart/form-data">
+<form name="uploadForm" id="uploadForm" method="post" action="modules/documentos/upload.php" enctype="multipart/form-data">
 	<table>
 		<tr>
-			<td>Imagen:</td>
-			<td><input type = "file" name = "imagen" id = "imagen"></td>
+			<td>Documento:</td>
+			<td><input type = "file" name = "documento" id = "documento"></td>
 		</tr>
 		<tr>
-			<td>Comentario:</td>
-			<td><textarea rows="3" cols="76" name = "comentario"></textarea></td>
+			<td>Curso:</td>
+			<td><?php echo $curso;?></td>
 		</tr>
 		<tr>
 			<td colspan = 2><input type = "submit" value = "Subir"></td>

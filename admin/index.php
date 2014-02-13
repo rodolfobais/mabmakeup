@@ -35,7 +35,7 @@ var themepath =  '<?php echo $arrConf['modulePath'];?>';
 //cargar headers html
 load_hmlt_headers();
 ?>
-
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >
 <!-- 
 <script type="text/javascript"> 

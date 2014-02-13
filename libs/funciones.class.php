@@ -30,7 +30,7 @@ class funciones{
 			$salida.= '
 				<p class="wb-stl-normal"> </p>
 				<p class="wb-stl-normal">'.$comentarios[$i]['fecha'].'</p>
-				<p class="wb-stl-normal"><a href="comentarios.php">'.$comentarios[$i]['contenido'].'</a></p>
+				<p class="wb-stl-normal" style = "height:80px;overflow:auto;"><a href="comentarios.php">'.$comentarios[$i]['contenido'].'</a></p>
 				<p class="wb-stl-normal" style = "border-bottom: 1px solid #7afb3a;"> </p>
 			';
 		}
@@ -39,30 +39,8 @@ class funciones{
 	function getMisTrabajos($cant){
 		$sql = "SELECT `fecha`, `imagen`, `comentario` FROM mistrabajos order by id desc LIMIT 0 , ".$cant."";
 		// 		// 	  	 echo $sql;
-		$comentarios = $this -> db -> QueryFetchArray($sql);
-		// 		// 		echo "<pre>"; print_r($sql);echo "</pre>";
-		// 		// 		file_put_contents("zzz_sql.sql", $sql);
-		// 		return $result[0]['valor'];
-		// 		// 		return $sql;
-		/*
-		$comentarios = array();
-		$pos = 0;
-		$comentarios[$pos]['fecha'] = '2013 01 20';
-		$comentarios[$pos]['imagen'] = '1494b05e8bf8751cdf473874350a6cb7_120x120.jpg';
-		$comentarios[$pos]['contenido'] = 'Ut wisi enim ad minim veniam, quis nostrud exercitation vel illum dolore eu feugiat nulla facilisis. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros';
-		$pos++;
-		$comentarios[$pos]['fecha'] = '2013 01 19';
-		$comentarios[$pos]['imagen'] = 'b6906e8d4d46223fb50e9646cc4d4426_120x120.jpg';
-		$comentarios[$pos]['contenido'] = 'Nam liber tempor cum soluta nobis eleifend option congue nihil. Claritas est etiam processus dynamicus, qui sequitur mutationem. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros';
-		$pos++;
-		$comentarios[$pos]['fecha'] = '2013 01 17';
-		$comentarios[$pos]['imagen'] = '0ccb6ff15783bcbd122c0184e1fe0eab_120x117.jpg';
-		$comentarios[$pos]['contenido'] = 'Claritas est etiam processus dynamicus, qui sequitur mutationem. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros. Claritas est etiam processus dynamicus, qui sequitur mutationem.';
-		*/
-	
+		$comentarios = $this -> db -> QueryFetchArray($sql);	
 		$salida = '';
-		$salida.= '
-			<table border = 0 width = 850 >';
 		for ($i = 0; $i < count($comentarios); $i++) {
 			$salida.= '
 				<tr>
@@ -71,14 +49,43 @@ class funciones{
 					</td>
 					<td style = "width: 75%; vertical-align:text-top;">
 						<p class="wb-stl-normal">'.$comentarios[$i]['fecha'].'</p>
-						<p class="wb-stl-normal"><a href="misTrabajos.php">'.$comentarios[$i]['comentario'].'</a></p>
+						<p class="wb-stl-normal" style = "height:100px;overflow:auto;"><a href="misTrabajos.php">'.$comentarios[$i]['comentario'].'</a></p>
 						<p class="wb-stl-normal" style = "border-bottom: 1px solid #7afb3a;"> </p>
 					</td>
 				</tr>
 			';
 		}
-		$salida.= '
-			</table>';
+		return $salida;
+	}
+	function getDocumentos(){
+// 		echo "<pre>"; print_r($_SESSION);echo "</pre>";
+		$sql = "SELECT 
+					`nombre`, 
+					(SELECT `descrp` as valor FROM `cursos` where `cursos`.`id` = `documentos`.`idcurso`) as idcurso, 
+					`fecha` 
+				FROM `documentos` 
+				WHERE `documentos`.`idcurso` IN 
+				(SELECT `alumno_curso`.`idcurso` FROM `alumno_curso` WHERE `alumno_curso`.`idalumno` = '".$_SESSION['userId']."')
+				ORDER BY `documentos`.`idcurso`";
+		// 		// 	  	 echo $sql;
+		$comentarios = $this -> db -> QueryFetchArray($sql);
+		$salida = '
+			<tr>
+				<td>Curso</td>
+				<td>Documento</td>
+			</tr>';
+		for ($i = 0; $i < count($comentarios); $i++) {
+			$salida.= '
+			<tr>
+				<td>
+					'.$comentarios[$i]['idcurso'].'
+				</td>
+				<td>
+					<a href="gallery/'.$comentarios[$i]['nombre'].'" target = "_blank">'.$comentarios[$i]['nombre'].'</a>
+				</td>
+			</tr>
+			';
+		}
 		return $salida;
 	}
 }
