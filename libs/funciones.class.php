@@ -44,12 +44,12 @@ class funciones{
 		for ($i = 0; $i < count($comentarios); $i++) {
 			$salida.= '
 				<tr>
-					<td style = "width: 25%">
-						<img alt="" src="gallery/'.$comentarios[$i]['imagen'].'" style="width: 120px; height: 120px;">
+					<td style = "width: 230px">
+						<img alt="" src="gallery/'.$comentarios[$i]['imagen'].'" style="width: 220px; height: 220px;">
 					</td>
-					<td style = "width: 75%; vertical-align:text-top;">
+					<td style = "vertical-align:text-top;">
 						<p class="wb-stl-normal">'.$comentarios[$i]['fecha'].'</p>
-						<p class="wb-stl-normal" style = "height:100px;overflow:auto;"><a href="misTrabajos.php">'.$comentarios[$i]['comentario'].'</a></p>
+						<p class="wb-stl-normal" style = "height:200px;overflow:auto;"><a href="misTrabajos.php">'.$comentarios[$i]['comentario'].'</a></p>
 						<p class="wb-stl-normal" style = "border-bottom: 1px solid #7afb3a;"> </p>
 					</td>
 				</tr>

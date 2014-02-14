@@ -5,7 +5,7 @@ ini_set("display_errors", 1);
 // $page = isset($_GET['menu']) ? $_GET['menu'] : '';
 
 if (!isset($_GET['menu'])) {
-	header('Location: index.php?menu=menu_list');
+	header('Location: index.php?menu=users_list');
 }
 
 // echo "<pre>".print_r($_GET,true)."</pre>";
@@ -53,7 +53,7 @@ global $arrMenu;
 $arrMenu = menuFiltered();
 //cargar el menu ya filtrado
 // echo $arrConf['moduleName'];
-$arrConf['moduleName'] = isset($_GET['menu']) ? $_GET['menu'] : 'menu_list';
+$arrConf['moduleName'] = isset($_GET['menu']) ? $_GET['menu'] : 'users_list';
 if (isset( $arrConf['moduleName'])){
 	showMenu($arrConf['moduleName']);
 }else{ 

@@ -366,7 +366,7 @@ $imagenPpal = "portada_documentos.jpg";
 					<?php require 'menuPpal.php';?>
 				</div>
 				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
-					<h4 class="wb-stl-pagetitle">MariaAngeles Blanco MakeUp</h4>
+					<h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4>
 				</div>
 				<div id="wb_element_instance29" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
 					<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>

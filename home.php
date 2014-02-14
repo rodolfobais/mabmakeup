@@ -7,7 +7,7 @@ $TituloHome = $fn->getParametro('TituloHome');
 $_SESSION['page'] = 'home.php';
 // die;
 $comentarios = $fn->getComentarios(3);
-$misTrabajos = $fn->getMisTrabajos(3);
+$misTrabajos = $fn->getMisTrabajos(2);
 // echo "<pre>"; print_r($_SESSION);echo "</pre>";
 
 $imagenPpal = "portada_home.jpg";
@@ -126,7 +126,7 @@ $imagenPpal = "portada_home.jpg";
 				</div>
 			</div>
 			<div class="vbox wb_container" id="wb_main" style="background: transparent none repeat-x scroll center bottom; padding: 0 0 70px 0; border: 0px solid #FF0000;">
-				<div id="wb_element_instance4" class="wb_element" style="left: 20px; top: 30px; width: 314px; height: 443px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal;">
+				<div id="wb_element_instance4" class="wb_element" style="left: 20px; top: 30px; width: 314px; height: 535px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal;">
 					<h2 class="wb-stl-heading2">Comentarios</h2>
 					<div id="wb_element_instance9" class="wb_element" style="left: 190px; top: 20px; width: 122px; height: 8px; min-width: 122px; min-height: 8px; z-index: 56;">
 						<div style="font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none; position: relative; margin: 1px 0 0 0; width: 100%; height: 1px; left: 0; top: 50%; border-top: 3px solid #7afb3a;"></div>
@@ -135,7 +135,7 @@ $imagenPpal = "portada_home.jpg";
 					<? echo $comentarios;?>
 					
 				</div>
-				<div style="position:relative; left: 400px; top: 30px; width: 580px; height: 443px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal; border: 0px solid #7afb3a;">
+				<div style="position:relative; left: 400px; top: 30px; width: 580px; height: 535px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal; border: 0px solid #7afb3a;">
 					<h2 class="wb-stl-heading2">Mis trabajos</h2>
 					<div style="position:relative; left: 180px; top: -10px; font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none;  margin: 1px 0 0 0; width: 400px; height: 1px; border-top: 3px solid #7afb3a;"></div>
 					<table border = 0 width = 580 >

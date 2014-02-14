@@ -20,7 +20,7 @@ class loadLangVar{
 		foreach ($result as $value) {
 			$arrLang[$value['idvar']] = utf8_encode($value['descrp']);
 		}
-// 		echo "<pre>".print_r($result,true)."</pre>";
+// 		echo "<pre>".print_r($arrLang,true)."</pre>";
 	}
 }
 ?>

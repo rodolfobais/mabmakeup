@@ -1,4 +1,4 @@
-<form name="uploadForm" id="uploadForm" method="post" action="modules/cargarportadahome/upload.php" enctype="multipart/form-data">
+<form name="uploadForm" id="uploadForm" method="post" action="modules/cargarportada/upload.php" enctype="multipart/form-data">
 	<h1>Propiedades de las portadas</h1>
 	<table id = "propTable" border = 1 cellpadding="5">
 			<tr>

@@ -13,19 +13,9 @@ $password = $_POST['psw'];
 // echo "<pre>"; print_r($_POST);echo "</pre>";die;
 $sc = new security('');
 if ($sc -> authenticateAlum ($login,$password)){
-// 	echo "true";die;
 	$_SESSION['user'] = $login;
-// 	echo "<pre>"; print_r($_SESSION);echo "</pre>";
-// 	die;
-	header('Location: ../index.php');
-// 	include 'index.php';
-}else{
-// 	echo "false";die;
-// 	header('Location: login.php?err=1');
-	header('Location: ../index.php');
-// 	include 'index.php';
 }
-
+header('Location: '.$_SESSION['page']);
 
 
 ?>

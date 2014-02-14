@@ -172,7 +172,7 @@ class dataBase{
 			}
 			$datos[] = $fila;
 		}
-		file_put_contents("zzz_debugdataase.txt", print_r($datos,true));
+	
 		return $datos;
 		$this -> dbClose();
 	}		

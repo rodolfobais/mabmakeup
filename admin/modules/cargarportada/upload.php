@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 $allowed = array('png', 'jpg', 'gif','zip');
@@ -13,8 +14,8 @@ if(isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0){
 		die;
 	}
 // 	echo "fn: ".move_uploaded_file($_FILES['imagen']['tmp_name'], 'uploads/'.$_FILES['imagen']['name']);
-	if(move_uploaded_file($_FILES['imagen']['tmp_name'], '../../../gallery/'.$nombre)){
-		header('Location: /mabmakeup/admin/index.php?menu=cargarportadahome');
+	if(move_uploaded_file($_FILES['imagen']['tmp_name'], '../../../gallery/'.$_FILES['imagen']['name'])){
+		header('Location: /mabmakeup/admin/index.php?menu=cargarportada');
 		echo '{"status":"success"}';
 		die;
 	}else{		

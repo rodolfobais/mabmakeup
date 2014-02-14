@@ -132,13 +132,11 @@ foreach ($ArrCols as $CCols) {
 		'cell' => $CCols
 	);
 }
-// echo "<pre>"; print_r($arrDatos);echo "</pre>";
-file_put_contents("zzz_debug.txt", print_r($arrDatos,true));
+
 //  dbClose();
 // pasamos el array a formato json
 
 $salida = json_encode($arrDatos);
-$salida = utf8_encode($salida);
-// $salida = preg_replace("/\u00c3\u0083\u00/", "&iacute;", $salida);
+// $salida = utf8_encode($salida);
 echo $salida;
 ?>
