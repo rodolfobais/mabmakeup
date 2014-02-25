@@ -253,7 +253,7 @@ $(document).ready(function() {
 						var response=$(data.html); //mis datos de ajax
 		                var formulario = response.find('#data'); //filtro lo que busco 
 		                $('#contenido_form').html('');
-					   	$('#contenido_form').html(data.html);// lo meto en el div 
+					   	$('#contenido_form').append(data.html);// lo meto en el div 
  		               	$('#modalbox').trigger('click'); //abro el div con fancybox
 		  				$('#date').val(data.msg);
 					}else{
@@ -288,7 +288,7 @@ $(document).ready(function() {
 	    	           		var response=$(data.html); //mis datos de ajax
 	                		var formulario = response.find('#data'); //filtro lo que busco 
 	                		$('#contenido_form').empty();
-				   			$('#contenido_form').html(data.html);// lo meto en el div 
+				   			$('#contenido_form').append(data.html);// lo meto en el div 
 	               			$('#modalbox').trigger('click'); //abro el div con fancybox
 		  					$('#date').val(data.msg);
 						}else{
@@ -317,7 +317,7 @@ $(document).ready(function() {
 	    	           		var response=$(data.html); //mis datos de ajax
 	                		var formulario = response.find('#data'); //filtro lo que busco 
 	                		$('#contenido_form').html('');
-				   			$('#contenido_form').html(data.html);// lo meto en el div 
+				   			$('#contenido_form').append(data.html);// lo meto en el div 
 	               			$('#modalbox').trigger('click'); //abro el div con fancybox
 		  					$('#date').val(data.msg);
 						}else{
@@ -363,6 +363,8 @@ function saveEdit(action){
 	var item = $('.trSelected td:first-child div').text() ;
 	var date = $('#date').val();
 	var datosFrm = $.base64.encode($('#form_client_gen_'+date).serialize());
+	//var datosFrm = $('#form_client_gen_'+date).serialize();
+	//alert($.find('#form_client_gen_'+date).length);
 	var json = {clase: 'generic_abm' , metodo: 'saveEdit', carpeta : 'libs/',modulo: '".$menu."', datos : datosFrm, id : item};
 	$.ajax({
 		data: {json: $.toJSON(json) },

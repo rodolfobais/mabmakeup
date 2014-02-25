@@ -6,14 +6,15 @@
 	require_once $_SERVER['DOCUMENT_ROOT'].'/mabmakeup/admin/configs/default.conf.php';
 	$_SESSION['pages'] = array(
 			'0'	=> array('id' => '1', 'alias' => 'Home', 'file' => 'home.php'),
-			'1'	=> array('id' => '2', 'alias' => 'Comentarios', 'file' => 'comentarios.php'),
+			'1'	=> array('id' => '2', 'alias' => 'Mis servicios', 'file' => 'misservicios.php'),
 			'2'	=> array('id' => '3', 'alias' => 'Mis trabajos', 'file' => 'misTrabajos.php'),
-			'3'	=> array('id' => '4', 'alias' => 'Contacto', 'file' => 'contacto.php')
-	);
+			'3'	=> array('id' => '4', 'alias' => 'Contacto', 'file' => 'contacto.php'),
+			'4'	=> array('id' => '5', 'alias' => 'Quién soy', 'file' => 'quiensoy.php')
+	); 
 	if (array_key_exists('user', $_SESSION)) {
-		$_SESSION['pages'][4]['id'] = '5';
-		$_SESSION['pages'][4]['alias'] = 'Documentos';
-		$_SESSION['pages'][4]['file'] = 'documentos.php';
+		$_SESSION['pages'][5]['id'] = '6';
+		$_SESSION['pages'][5]['alias'] = 'Documentos';
+		$_SESSION['pages'][5]['file'] = 'documentos.php';
 	}
 	
 // 	echo "<pre>"; print_r($_SERVER);echo "</pre>";

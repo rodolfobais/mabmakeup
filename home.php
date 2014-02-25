@@ -6,25 +6,24 @@ $fn = new funciones('admin/');
 $TituloHome = $fn->getParametro('TituloHome');
 $_SESSION['page'] = 'home.php';
 // die;
-$comentarios = $fn->getComentarios(3);
+$misservicios = $fn->getmisservicios(2);
 $misTrabajos = $fn->getMisTrabajos(2);
 // echo "<pre>"; print_r($_SESSION);echo "</pre>";
 
-$imagenPpal = "portada_home.jpg";
+$imagenPpal = "portada_home.jpg?v=".$_SESSION['date'];
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Home</title>
 	<base href="<?php echo $_SESSION['_BasePath'];?>" />
 	<meta name="viewport" content="width=1005" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-		<meta name="generator" content="Zyro Web Site Builder" />
-	
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
@@ -89,6 +88,7 @@ $imagenPpal = "portada_home.jpg";
 			});
 		});
 	</script>
+	<?php require 'includer.php';?>
 </head>
 	<body>
 		<div class="root" style="width: 1007px;">
@@ -97,7 +97,8 @@ $imagenPpal = "portada_home.jpg";
 					<?php require 'menuPpal.php';?>
 				</div>
 				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
-					<h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4>
+					<!-- <h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4> -->
+					<img alt="Mariangeles Blanco Make Up" src="gallery/logonombre.png">
 				</div>
 				<div id="wb_element_instance2" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
 					<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>
@@ -111,7 +112,7 @@ $imagenPpal = "portada_home.jpg";
 					 <?php 
 						 if (!array_key_exists('user', $_SESSION)) {
 						 	echo '	
-								<form action="validaLogin.php" method="post" id="loginForm" name="loginForm" style="width:300px;height:40px;">
+								<form action="validaLogin.php" method="post" id="loginForm" name="loginForm" style="width:230px;height:40px;">
 									<input name = "user"   type="text" style="width:150px;height:10px;" placeholder="Usuario">
 									<input name = "submit" type="submit" value="Entrar">
 									<input name = "psw"    type="password" style="width:150px;" placeholder="Password">
@@ -127,12 +128,12 @@ $imagenPpal = "portada_home.jpg";
 			</div>
 			<div class="vbox wb_container" id="wb_main" style="background: transparent none repeat-x scroll center bottom; padding: 0 0 70px 0; border: 0px solid #FF0000;">
 				<div id="wb_element_instance4" class="wb_element" style="left: 20px; top: 30px; width: 314px; height: 535px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal;">
-					<h2 class="wb-stl-heading2">Comentarios</h2>
+					<h2 class="wb-stl-heading2">Mis servicios</h2>
 					<div id="wb_element_instance9" class="wb_element" style="left: 190px; top: 20px; width: 122px; height: 8px; min-width: 122px; min-height: 8px; z-index: 56;">
 						<div style="font-size: 1px; overflow: hidden; line-height: 1px; padding: 0; background: transparent; float: none; position: relative; margin: 1px 0 0 0; width: 100%; height: 1px; left: 0; top: 50%; border-top: 3px solid #7afb3a;"></div>
 					</div>
 					
-					<? echo $comentarios;?>
+					<? echo $misservicios;?>
 					
 				</div>
 				<div style="position:relative; left: 400px; top: 30px; width: 580px; height: 535px; min-width: 314px; min-height: 443px; z-index: 46;  line-height: normal; border: 0px solid #7afb3a;">

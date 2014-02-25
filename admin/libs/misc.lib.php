@@ -419,13 +419,6 @@ function load_hmlt_headers()
 	include_subfiles();
 	
 ?>
-<script type="text/javascript" src="own_id.inc.php"></script>
-<script type="text/javascript"> 
-var base_url =  '';
-var physical_id_section = '';
-
-</script>
-
 </head>
 
 <?php

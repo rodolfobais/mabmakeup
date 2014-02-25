@@ -11,7 +11,7 @@ $_SESSION['page'] = 'documentos.php';
 $documentos = $fn->getDocumentos();
 // echo "<pre>"; print_r($_SESSION);echo "</pre>";
 
-$imagenPpal = "portada_documentos.jpg";
+$imagenPpal = "portada_documentos.jpg?v=".$_SESSION['date'];
 
 ?>
 
@@ -358,6 +358,7 @@ $imagenPpal = "portada_documentos.jpg";
 			});
 		});
 	</script>
+	<?php require 'includer.php';?>
 	</head>
 	<body>
 		<div class="root" style="width: 1007px; height: 1313px;">
@@ -366,7 +367,8 @@ $imagenPpal = "portada_documentos.jpg";
 					<?php require 'menuPpal.php';?>
 				</div>
 				<div id="wb_element_instance1" class="wb_element" style="left: 39px; top: 23px; width: 580px; height: 43px; min-width: 380px; min-height: 43px; z-index: 63;  line-height: normal;">
-					<h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4>
+					<!-- <h4 class="wb-stl-pagetitle">Mariangeles Blanco Make Up</h4> -->
+					<img alt="Mariangeles Blanco Make Up" src="gallery/logonombre.png">
 				</div>
 				<div id="wb_element_instance29" class="wb_element" style="left: 957px; top: 34px; width: 24px; height: 23px; min-width: 24px; min-height: 23px; z-index: 69;">
 					<a href="https://www.facebook.com/mariangelesblanco.makeup" target="_blank"><img alt="" src="gallery/d79712d6d9595f661588582556ae6eec_24x23.png" style="width: 24px; height: 23px;"></a>
@@ -375,7 +377,7 @@ $imagenPpal = "portada_documentos.jpg";
 					 <?php 
 						 if (!array_key_exists('user', $_SESSION)) {
 						 	echo '	
-								<form action="validaLogin.php" method="post" id="loginForm" name="loginForm" style="width:300px;height:40px;">
+								<form action="validaLogin.php" method="post" id="loginForm" name="loginForm" style="width:230px;height:40px;">
 									<input name = "user"   type="text" style="width:150px;height:10px;" placeholder="Usuario">
 									<input name = "submit" type="submit" value="Entrar">
 									<input name = "psw"    type="password" style="width:150px;" placeholder="Password">

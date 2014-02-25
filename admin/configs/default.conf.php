@@ -26,4 +26,7 @@ $_SESSION['_TITLE'] = 'DRB Core Administrator';
 // define ('_VERSION','0.1');
 $_SESSION['_VERSION'] = '1.0';
 
+$hoy = getdate();
+$_SESSION['date'] = $hoy['year'].$hoy['mon'].$hoy['mday'].$hoy['hours'].$hoy['minutes'].$hoy['seconds'];
+
 ?>

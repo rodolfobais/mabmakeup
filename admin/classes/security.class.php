@@ -6,7 +6,7 @@
 class security{
 	public $arrayLogin = array();
 	function __construct($param){
-		echo "param: ".$param;
+		//echo "param: ".$param;
 		$this -> dir = $param;
 		require $this -> dir.'dataBase.class.php';
 		$this -> db = new dataBase($this -> dir);

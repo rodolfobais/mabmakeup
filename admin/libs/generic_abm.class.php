@@ -359,6 +359,7 @@ class generic_abm {
 		
 		$GET = explode("&",base64_decode($obj->datos));
 		$arrAsoc = Array();
+// 		echo "<pre>"; print_r($obj); echo "</pre>";
 		foreach ($GET as $value) {
 			$ArrTemp = explode("=",$value);
 			$arrAsoc[$ArrTemp[0]] = urldecode($ArrTemp[1]);

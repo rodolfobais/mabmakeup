@@ -18,26 +18,31 @@ class funciones{
 		return $result[0]['valor'];
 // 		return $sql;
 	}
-	function getComentarios($cant){
-		$sql = "SELECT `date` as fecha, `comentario` as contenido FROM comentarios order by date desc LIMIT 0 , ".$cant."";
+	function getmisservicios($cant){
+		$sql = "SELECT DATE_FORMAT(`fecha`,'%d/%m/%Y') as fecha, `imagen`, `comentario` FROM misservicios order by id desc LIMIT 0 , ".$cant."";
 // 		// 	  	 echo $sql;
-		$comentarios = $this -> db -> QueryFetchArray($sql);
+		$misservicios = $this -> db -> QueryFetchArray($sql);
 // 		// 		echo "<pre>"; print_r($sql);echo "</pre>";
 		
 		$salida = '';
 		
-		for ($i = 0; $i < count($comentarios); $i++) {
+		for ($i = 0; $i < count($misservicios); $i++) {
 			$salida.= '
-				<p class="wb-stl-normal"> </p>
-				<p class="wb-stl-normal">'.$comentarios[$i]['fecha'].'</p>
-				<p class="wb-stl-normal" style = "height:80px;overflow:auto;"><a href="comentarios.php">'.$comentarios[$i]['contenido'].'</a></p>
-				<p class="wb-stl-normal" style = "border-bottom: 1px solid #7afb3a;"> </p>
+				<tr>
+					<td style = "width: 230px">
+						<img onclick = "abrirmodal(\'gallery/'.$misservicios[$i]['imagen'].'\')" alt="" src="gallery/'.$misservicios[$i]['imagen'].'" style="width: 220px; height: 220px;">
+					</td>
+					<td style = "vertical-align:text-top;">
+						<p class="wb-stl-normal" style = "height:50px;overflow:auto;"><a href="misTrabajos.php">'.$misservicios[$i]['comentario'].'</a></p>
+						<p class="wb-stl-normal">'.$misservicios[$i]['fecha'].'</p>
+					</td>
+				</tr>
 			';
 		}
 		return $salida;
 	}
 	function getMisTrabajos($cant){
-		$sql = "SELECT `fecha`, `imagen`, `comentario` FROM mistrabajos order by id desc LIMIT 0 , ".$cant."";
+		$sql = "SELECT DATE_FORMAT(`fecha`,'%d/%m/%Y') as fecha, `imagen`, `comentario` FROM mistrabajos order by id desc LIMIT 0 , ".$cant."";
 		// 		// 	  	 echo $sql;
 		$comentarios = $this -> db -> QueryFetchArray($sql);	
 		$salida = '';
@@ -45,7 +50,7 @@ class funciones{
 			$salida.= '
 				<tr>
 					<td style = "width: 230px">
-						<img alt="" src="gallery/'.$comentarios[$i]['imagen'].'" style="width: 220px; height: 220px;">
+						<img onclick = "abrirmodal(\'gallery/'.$comentarios[$i]['imagen'].'\')" alt="" src="gallery/'.$comentarios[$i]['imagen'].'" style="width: 220px; height: 220px;">
 					</td>
 					<td style = "vertical-align:text-top;">
 						<p class="wb-stl-normal">'.$comentarios[$i]['fecha'].'</p>

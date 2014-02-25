@@ -8,7 +8,7 @@ if(isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0){
 	//echo "TRUE";
 	$extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
 // 	echo "ext: ".$extension;
-	$nombre = $id.".".$extension;
+// 	$nombre = $id.".".$extension;
 	if(!in_array(strtolower($extension), $allowed)){
 		echo '{"status":"error"}';
 		die;
